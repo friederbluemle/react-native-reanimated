@@ -36,4 +36,21 @@ target 'ReanimatedExample' do
   pod 'RNReanimated', :path => '../../'
 
   use_native_modules!
+
+  target 'ReanimatedExampleTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  use_native_modules!
+end
+
+target 'ReanimatedExample-tvOS' do
+  # Pods for ReanimatedExample-tvOS
+
+  target 'ReanimatedExample-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
 end

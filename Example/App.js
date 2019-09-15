@@ -1,4 +1,11 @@
-import { createBrowserApp } from '@react-navigation/web';
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow
+ */
+
 import React from 'react';
 import {
   FlatList,
@@ -10,6 +17,7 @@ import {
 } from 'react-native';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
 import { createAppContainer } from 'react-navigation';
+import { createBrowserApp } from '@react-navigation/web';
 import { createStackNavigator } from 'react-navigation-stack';
 
 import ChatHeads from './chatHeads';
@@ -35,8 +43,8 @@ import TransitionsTicket from './transitions/ticket';
 import WidthAndHeight from './widthAndHeight';
 
 YellowBox.ignoreWarnings([
-  'Warning: isMounted(...) is deprecated',
-  'Module RCTImageLoader',
+  // 'Warning: isMounted(...) is deprecated',
+  // 'Module RCTImageLoader',
 ]);
 // refers to bug in React Navigation which should be fixed soon
 // https://github.com/react-navigation/react-navigation/issues/3956
@@ -124,7 +132,7 @@ class MainScreenItem extends React.Component {
   }
 }
 
-const ExampleApp = createStackNavigator(
+const App = createStackNavigator(
   {
     Main: { screen: MainScreen },
     ...SCREENS,
@@ -162,4 +170,4 @@ const createApp = Platform.select({
   default: input => createAppContainer(input),
 });
 
-export default createApp(ExampleApp);
+export default createApp(App);
